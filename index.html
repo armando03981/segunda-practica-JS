@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        .visible {
+            visibility: visible;
+            background-color: orangered;
+        }
+
+        .oculto {
+            visibility: hidden;
+            background-color: blue;
+        }
+
+        .seleccion {
+            background-color: blue;
+        }
+
+        .normal {
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col s4 ">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="img/comida 1.jpg">
+                    <span class="card-title">Sopa de trotilla</span>
+                </div>
+                <div class="card-action">
+                    <a href="#"><img id="like1" class="normal" src="Like.png" height="50px" width="50px" onclick="lik('1');">
+                        <img id="dislike1" class="normal" src="NLike.png" height="39px" width="39px" onclick="dislik('1');">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col s4 ">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="img/comida 2.jpg">
+                    <span class="card-title">Mishotes</span>
+                </div>
+                <div class="card-action">
+                    <a href="#"><img id="like2" class="normal" src="Like.png" height="50px" width="50px" onclick="lik('2');">
+                        <img id="dislike2" class="normal" src="NLike.png" height="39px" width="39px" onclick="dislik('2');">
+                </div>
+            </div>
+        </div>
+
+        <div class="col s4 ">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="img/comida 3.jpg">
+                    <span class="card-title">Guacamole</span>
+                </div>
+                <div class="card-action">
+                    <img id="like3" class="normal" src="Like.png" height="50px" width="50px" onclick="lik('3');">
+                    <img id="dislike3" class="normal" src="NLike.png" height="39px" width="39px" onclick="dislik('3');">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4">
+            <div class="card medium">
+                <div class="card-image">
+                    <img src="img/comida 4.jpg">
+                    <span class="card-title">Pansita</span>
+                </div>
+                <div class="card-action">
+                    <a href="#"><img id="like4" class="normal" src="Like.png" height="50px" width="50px" onclick="lik('4');">
+                        <img id="dislike4" class="normal" src="NLike.png" height="39px" width="39px" onclick="dislik('4');">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+</body>
+<script>
+    function lik(id) {
+        var like = document.getElementById("like" + id);
+        var dislike = document.getElementById("dislike" + id);
+        if (dislike.className == "seleccion") {
+            like.className = "seleccion";
+            dislike.className = "normal";
+        } else if (like.className == "normal") {
+            like.className = "seleccion";
+        } else if (like.className == "seleccion") {
+            like.className = "normal";
+
+        }
+    }
+    function dislik(id) {
+        var like = document.getElementById("like" + id);
+        var dislike = document.getElementById("dislike" + id);
+        if (like.className == "seleccion") {
+            dislike.className = "seleccion";
+            like.className = "normal";
+        } else if (dislike.className == "normal") {
+            dislike.className = "seleccion";
+        } else if (dislike.className == "seleccion") {
+            dislike.className = "normal";
+
+        }
+    }
+</script>
+
+</html>
